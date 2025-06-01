@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - EventHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/event-details.css">
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>EventHub</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="user-dashboard.html" class="header__nav-link">My Events</a></li>
+                <li class="header__nav-item"><a href="organizer-login.html" class="header__nav-link">Organizer Login</a></li>
+                <li class="header__nav-item"><a href="signup.html" class="header__nav-link">Sign Up</a></li>
+                <li class="header__nav-item" id="login-container">
+                    <a href="#" id="login-button" class="header__nav-link">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="event-details">
+            <div id="event-details-container" class="event-details__container">
+                <!-- Event details will be dynamically inserted here -->
+            </div>
+            
+            <div class="event-details__registration">
+                <h3 class="event-details__registration-title">Register for this Event</h3>
+                <div class="event-details__ticket-options">
+                    <div class="event-details__ticket-type">
+                        <label for="ticket-type">Ticket Type:</label>
+                        <select id="ticket-type" class="event-details__select">
+                            <option value="general">General Admission</option>
+                            <option value="vip">VIP Access</option>
+                        </select>
+                    </div>
+                    <div class="event-details__ticket-quantity">
+                        <label for="ticket-quantity">Quantity:</label>
+                        <select id="ticket-quantity" class="event-details__select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="event-details__price">
+                    <p>Total: <span id="total-price">$0.00</span></p>
+                </div>
+                <div class="event-details__actions">
+                    <button id="register-button" class="button button--primary">Register Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2023 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-modal-form" class="login__form">
+                <div class="login__form-group">
+                    <label for="login-email" class="login__label">Email</label>
+                    <input type="email" id="login-email" name="email" class="login__input" required>
+                </div>
+                
+                <div class="login__form-group">
+                    <label for="login-password" class="login__label">Password</label>
+                    <input type="password" id="login-password" name="password" class="login__input" required>
+                </div>
+                
+                <div class="login__actions">
+                    <button type="submit" class="button button--primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/event-details.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>EventHub</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="user-dashboard.html" class="header__nav-link">My Events</a></li>
+                <li class="header__nav-item"><a href="organizer-login.html" class="header__nav-link">Organizer Login</a></li>
+                <li class="header__nav-item"><a href="signup.html" class="header__nav-link">Sign Up</a></li>
+                <li class="header__nav-item" id="login-container">
+                    <a href="#" id="login-button" class="header__nav-link">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero__content">
+                <h2 class="hero__title">Find Your Next Experience</h2>
+                <p class="hero__subtitle">Discover and register for events that match your interests</p>
+            </div>
+        </section>
+
+        <section class="search">
+            <div class="search__container">
+                <div class="search__input-group">
+                    <input type="text" id="search-keyword" class="search__input" placeholder="Search events...">
+                </div>
+                <div class="search__filters">
+                    <select id="filter-category" class="search__select">
+                        <option value="">All Categories</option>
+                        <option value="conference">Conferences</option>
+                        <option value="concert">Concerts</option>
+                        <option value="workshop">Workshops</option>
+                        <option value="networking">Networking</option>
+                    </select>
+                    <input type="date" id="filter-date" class="search__date">
+                    <select id="filter-price" class="search__select">
+                        <option value="">Any Price</option>
+                        <option value="free">Free</option>
+                        <option value="paid">Paid</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                    <button id="search-button" class="search__button">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="events">
+            <h2 class="events__title">Upcoming Events</h2>
+            <div id="events-container" class="events__container">
+                <!-- Events will be dynamically inserted here -->
+            </div>
+            <div class="events__load-more">
+                <button id="load-more" class="button button--secondary">Load More</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2023 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-modal-form" class="login__form">
+                <div class="login__form-group">
+                    <label for="login-email" class="login__label">Email</label>
+                    <input type="email" id="login-email" name="email" class="login__input" required>
+                </div>
+                
+                <div class="login__form-group">
+                    <label for="login-password" class="login__label">Password</label>
+                    <input type="password" id="login-password" name="password" class="login__input" required>
+                </div>
+                
+                <div class="login__actions">
+                    <button type="submit" class="button button--primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

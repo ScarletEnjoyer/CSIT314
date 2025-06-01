@@ -1,0 +1,223 @@
+.dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dashboard__title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard__tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 1.5rem;
+}
+
+.dashboard__tab {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: var(--transition);
+  position: relative;
+}
+
+.dashboard__tab.active {
+  color: var(--color-primary);
+}
+
+.dashboard__tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.dashboard__content {
+  display: none;
+}
+
+.dashboard__content.active {
+  display: block;
+}
+
+.dashboard__events {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.dashboard__event-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.dashboard__event-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard__event-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.dashboard__event-content {
+  padding: 1.25rem;
+}
+
+.dashboard__event-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard__event-date {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.dashboard__event-ticket {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.dashboard__event-ticket-type {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard__event-ticket-id {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.dashboard__event-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard__notifications {
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.dashboard__notification {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.dashboard__notification:last-child {
+  border-bottom: none;
+}
+
+.dashboard__notification:hover {
+  background-color: #f9fafb;
+}
+
+.dashboard__notification-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard__notification-date {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.dashboard__notification-content {
+  margin-top: 0.5rem;
+}
+
+.dashboard__notification--unread {
+  border-left: 3px solid var(--color-primary);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal__content {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal__ticket {
+  text-align: center;
+}
+
+.modal__ticket-qr {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 1.5rem;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .dashboard__tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .dashboard__events {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard__event-location,
+.dashboard__event-purchase-date,
+.dashboard__event-price {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.dashboard__event-ticket {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+}

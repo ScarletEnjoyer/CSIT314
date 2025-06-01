@@ -1,0 +1,135 @@
+.events-management {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.events-management__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.events-management__title {
+  font-size: 1.75rem;
+}
+
+.events-management__filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.events-management__select {
+  width: 200px;
+}
+
+.events-management__search {
+  flex: 1;
+}
+
+.events-management__table-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.events-management__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.events-management__table th,
+.events-management__table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.events-management__table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+.events-management__table tr:last-child td {
+  border-bottom: none;
+}
+
+.events-management__table tr:hover td {
+  background-color: #f9fafb;
+}
+
+.events-management__status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.events-management__status--upcoming {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.events-management__status--ongoing {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.events-management__status--past {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.events-management__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.events-management__action-button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: var(--border-radius);
+  background: none;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.events-management__action-button:hover {
+  background-color: #f3f4f6;
+}
+
+.events-management__action-button--edit {
+  color: #4f46e5;
+}
+
+.events-management__action-button--delete {
+  color: #ef4444;
+}
+
+.events-management__action-button--view {
+  color: #10b981;
+}
+
+@media (max-width: 768px) {
+  .events-management__header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .events-management__filters {
+    flex-direction: column;
+  }
+
+  .events-management__table-container {
+    overflow-x: auto;
+  }
+
+  .events-management__table {
+    min-width: 700px;
+  }
+}

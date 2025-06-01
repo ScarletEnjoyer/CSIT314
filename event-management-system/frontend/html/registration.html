@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - EventHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/registration.css">
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>EventHub</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="user-dashboard.html" class="header__nav-link">My Events</a></li>
+                <li class="header__nav-item"><a href="organizer-login.html" class="header__nav-link">Organizer Login</a></li>
+                <li class="header__nav-item"><a href="signup.html" class="header__nav-link">Sign Up</a></li>
+                <li class="header__nav-item" id="login-container">
+                    <a href="#" id="login-button" class="header__nav-link">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="registration">
+            <h2 class="registration__title">Complete Your Registration</h2>
+            <div id="event-summary" class="registration__summary">
+                <!-- Event summary will be dynamically inserted here -->
+            </div>
+            
+            <form id="registration-form" class="registration__form">
+                <div class="registration__form-group">
+                    <label for="full-name" class="registration__label">Full Name</label>
+                    <input type="text" id="full-name" name="fullName" class="registration__input" required>
+                </div>
+                
+                <div class="registration__form-group">
+                    <label for="email" class="registration__label">Email Address</label>
+                    <input type="email" id="email" name="email" class="registration__input" required>
+                    <p id="email-error" class="registration__error"></p>
+                </div>
+                
+                <div class="registration__form-group">
+                    <label for="phone" class="registration__label">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="registration__input" required>
+                </div>
+                
+                <div class="registration__ticket-info">
+                    <h3>Ticket Information</h3>
+                    <p>Event: <span id="event-name"></span></p>
+                    <p>Ticket Type: <span id="ticket-type-display"></span></p>
+                    <p>Quantity: <span id="ticket-quantity-display"></span></p>
+                    <p>Total Price: <span id="total-price-display"></span></p>
+                </div>
+                
+                <div class="registration__payment">
+                    <h3>Payment Information</h3>
+                    <div class="registration__form-group">
+                        <label for="card-number" class="registration__label">Card Number</label>
+                        <input type="text" id="card-number" name="cardNumber" class="registration__input" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    
+                    <div class="registration__form-row">
+                        <div class="registration__form-group">
+                            <label for="expiry-date" class="registration__label">Expiry Date</label>
+                            <input type="text" id="expiry-date" name="expiryDate" class="registration__input" placeholder="MM/YY" required>
+                        </div>
+                        
+                        <div class="registration__form-group">
+                            <label for="cvv" class="registration__label">CVV</label>
+                            <input type="text" id="cvv" name="cvv" class="registration__input" placeholder="123" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="registration__actions">
+                    <button type="button" id="back-button" class="button button--secondary">Back</button>
+                    <button type="submit" id="pay-button" class="button button--primary">Complete Payment</button>
+                </div>
+            </form>
+            
+            <div id="ticket-container" class="registration__ticket hidden">
+                <!-- E-ticket will be dynamically inserted here after successful payment -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2023 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-modal-form" class="login__form">
+                <div class="login__form-group">
+                    <label for="login-email" class="login__label">Email</label>
+                    <input type="email" id="login-email" name="email" class="login__input" required>
+                </div>
+                
+                <div class="login__form-group">
+                    <label for="login-password" class="login__label">Password</label>
+                    <input type="password" id="login-password" name="password" class="login__input" required>
+                </div>
+                
+                <div class="login__actions">
+                    <button type="submit" class="button button--primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/registration.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

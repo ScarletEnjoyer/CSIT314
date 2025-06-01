@@ -1,0 +1,120 @@
+.event-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.event-details__container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.event-details__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.event-details__content {
+  padding: 1.5rem;
+}
+
+.event-details__title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.event-details__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-details__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.event-details__description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.event-details__organizer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: var(--border-radius);
+}
+
+.event-details__organizer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.event-details__organizer-name {
+  font-weight: 600;
+}
+
+.event-details__registration {
+  background-color: white;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.event-details__registration-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-details__ticket-options {
+  margin-bottom: 1.5rem;
+}
+
+.event-details__ticket-type,
+.event-details__ticket-quantity {
+  margin-bottom: 1rem;
+}
+
+.event-details__select {
+  width: 100%;
+}
+
+.event-details__price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.event-details__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.event-details__actions .button {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .event-details {
+    grid-template-columns: 1fr;
+  }
+
+  .event-details__image {
+    height: 200px;
+  }
+}
